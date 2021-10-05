@@ -208,9 +208,6 @@ public class MainActivity extends AppCompatActivity implements BLEControllerList
             Intent enableBTIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBTIntent, 1);
         }
-
-
-
     }
 
     @Override

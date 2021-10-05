@@ -47,11 +47,19 @@ public class BLEController extends MyViewModel{
 
     private BluetoothGattService btGattService;
 
+    public String MAINBATT_HIGH_BIN_READY = "[49, 48, 13, 10]"; //10
+    public String MAINBATT_HIGH_BIN_FULL = "[49, 49, 13, 10]"; //11
+    public String MAINBATT_LOW_BIN_READY = "[49, 50, 13, 10]"; //12
+    public String MAINBATT_LOW_BIN_FULL = "[49, 51, 13, 10]"; //13
 
-    public String ready = "[49, 48, 13, 10]";
-    public String full = "[49, 49, 13, 10]";
-
-
+//    public String MAINBATT_HIGH_MOTORBATT_HIGH_BIN_READY = "[49, 48, 13, 10]"; //10
+//    public String MAINBATT_HIGH_MOTORBATT_HIGH_BIN_FULL = "[49, 49, 13, 10]"; //11
+//    public String MAINBATT_HIGH_MOTORBATT_LOW_BIN_READY = "[49, 50, 13, 10]"; //12
+//    public String MAINBATT_HIGH_MOTORBATT_LOW_BIN_FULL = "[49, 51, 13, 10]"; //13
+//    public String MAINBATT_LOW_MOTORBATT_HIGH_BIN_READY = "[49, 52, 13, 10]"; //14
+//    public String MAINBATT_LOW_MOTORBATT_HIGH_BIN_FULL = "[49, 53, 13, 10]"; //15
+//    public String MAINBATT_LOW_MOTORBATT_LOW_BIN_READY = "[49, 54, 13, 10]"; //16
+//    public String MAINBATT_LOW_MOTORBATT_LOW_BIN_FULL = "[49, 55, 13, 10]"; //17
 
 
     private BLEController(Context ctx) {
@@ -169,18 +177,75 @@ public class BLEController extends MyViewModel{
 
             //getBinStatus();
 
-            if(Arrays.toString(value).equals(ready))
+            if(Arrays.toString(value).equals(MAINBATT_HIGH_BIN_READY))
             {
-                Log.i("onCharacteristicRead", "ValueREADY: " + Arrays.toString(value));
-                updateBin(0); // 0 = READY
+                Log.i("onCharacteristicRead", "ValueHHR: " + Arrays.toString(value));
+                updateBin(0); // 0 = HIGH READY
+            }
+
+            else if(Arrays.toString(value).equals(MAINBATT_HIGH_BIN_FULL))
+            {
+                Log.i("onCharacteristicRead", "ValueHHF: " + Arrays.toString(value));
+                updateBin(1); // 1 = HIGH FULL
+            }
+            else if(Arrays.toString(value).equals(MAINBATT_LOW_BIN_READY))
+            {
+                Log.i("onCharacteristicRead", "ValueHLR: " + Arrays.toString(value));
+                updateBin(2); // 2 = HIGH READY
+
+            }
+            else if(Arrays.toString(value).equals(MAINBATT_LOW_BIN_FULL))
+            {
+                Log.i("onCharacteristicRead", "ValueHLF: " + Arrays.toString(value));
+                updateBin(3); // 3 = LOW FULL
 
             }
 
-            else if(Arrays.toString(value).equals(full))
-            {
-                Log.i("onCharacteristicRead", "ValueFULL: " + Arrays.toString(value));
-                updateBin(1); // 1 = FULL
-            }
+//            if(Arrays.toString(value).equals(MAINBATT_HIGH_MOTORBATT_HIGH_BIN_READY))
+//            {
+//                Log.i("onCharacteristicRead", "ValueHHR: " + Arrays.toString(value));
+//                updateBin(0); // 0 = HIGH HIGH READY
+//
+//            }
+//
+//            else if(Arrays.toString(value).equals(MAINBATT_HIGH_MOTORBATT_HIGH_BIN_FULL))
+//            {
+//                Log.i("onCharacteristicRead", "ValueHHF: " + Arrays.toString(value));
+//                updateBin(1); // 1 = HIGH HIGH FULL
+//            }
+//            else if(Arrays.toString(value).equals(MAINBATT_HIGH_MOTORBATT_LOW_BIN_READY))
+//            {
+//                Log.i("onCharacteristicRead", "ValueHLR: " + Arrays.toString(value));
+//                updateBin(2); // 2 = HIGH LOW READY
+//
+//            }
+//            else if(Arrays.toString(value).equals(MAINBATT_HIGH_MOTORBATT_LOW_BIN_FULL))
+//            {
+//                Log.i("onCharacteristicRead", "ValueHLF: " + Arrays.toString(value));
+//                updateBin(3); // 3 = HIGH LOW FULL
+//
+//            }
+//            else if(Arrays.toString(value).equals(MAINBATT_LOW_MOTORBATT_HIGH_BIN_READY))
+//            {
+//                Log.i("onCharacteristicRead", "ValueLHR: " + Arrays.toString(value));
+//                updateBin(4); // 4 = LOW HIGH READY
+//            }
+//            else if(Arrays.toString(value).equals(MAINBATT_LOW_MOTORBATT_HIGH_BIN_FULL))
+//            {
+//                Log.i("onCharacteristicRead", "ValueLHF: " + Arrays.toString(value));
+//                updateBin(5); // 5 = LOW HIGH FULL
+//            }
+//            else if(Arrays.toString(value).equals(MAINBATT_LOW_MOTORBATT_LOW_BIN_READY))
+//            {
+//                Log.i("onCharacteristicRead", "ValueLLR: " + Arrays.toString(value));
+//                updateBin(6); // 6 = LOW LOW READY
+//            }
+//            else if(Arrays.toString(value).equals(MAINBATT_LOW_MOTORBATT_LOW_BIN_FULL))
+//            {
+//                Log.i("onCharacteristicRead", "ValueLLF: " + Arrays.toString(value));
+//                updateBin(7); // 7 = LOW LOW FULL
+//            }
+
             else{
                 Log.i("onCharacteristicRead", "ValueELSEARR: " + Arrays.toString(value));
                 Log.i("onCharacteristicRead", "ValueELSEV: " + v     );

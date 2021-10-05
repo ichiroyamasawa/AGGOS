@@ -8,6 +8,7 @@
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable-v24/ic_baseline_bin_full_24.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/bg_half_circle_white.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/bg_rect_white.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/bg_rect_white_flattop.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/bg_scan_popup.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/btn_rect_red.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/btn_rect_white.xml" value="0.2755208333333333" />
@@ -18,7 +19,8 @@
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/ic_baseline_bin_ready_24.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/layout/activity_controller.xml" value="0.176" />
+        <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/layout/activity_controller.xml" value="0.264" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/layout/activity_faq.xml" value="0.2" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/layout/activity_instructions.xml" value="0.152" />
         <entry key="..\:/Users/imyamasawa/Desktop/AGGOS/app/src/main/res/layout/activity_main.xml" value="0.264" />
