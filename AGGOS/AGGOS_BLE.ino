@@ -16,6 +16,8 @@ void initBluetooth() {
   sendCommand("AT+UUIDFFE0"); // Default UID
   sendCommand("AT+CHARFFE1"); // Default Characteristic ID
   sendCommand("AT+NAMEAGGOS"); //Name AGGOS
+
+  // sendCommand("AT+STATE"); //STATE AGGOS
 }
 
 void sendCommand(const char * command) {
@@ -46,13 +48,6 @@ void updateSerial() {
   if (Serial.available())     
     BTserial.write(Serial.read());
 }
-
-// Used for proximity sensor
-void checkBin(){
-  
-  proxSensor();
-  
-  }
 
 void readCommand() {
   while (BTserial.available()) {

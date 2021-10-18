@@ -1,39 +1,73 @@
 #define SENSOR 2 //Pin 2 Mega
 
-const int BIN_READY = 0xA; //10
-const int BIN_FULL = 0xB; //11
-
 int counter = 0;
 
+// conveyor gearmotor
+int IN1 = 4;
+int IN4 = 5;
+
+// bool isBLEcon = false;
+
+//sensor connection:
 //Brown: 5V DC
 //Blue:  GNG
 //Black: Signal, to PIN 2
 
+void gearmotorSetup()
+{
+  pinMode(IN1, OUTPUT);
+  pinMode(IN4, OUTPUT);
+}
 
-
-
-void proxSensor()
+boolean isBinReady()
   {
   int L =digitalRead(SENSOR);// read the sensor 
-
+  // Serial.print("isBLECON? ");
+  // Serial.println(isBLEcon);
+    // if( isBLEcon == true)
+    // {
      if(L == 0)
      {
         counter++;
-        delay(1000);
+        
         if(counter >= 3){
-        Serial.println("Bin is FULL!");
-        BTserial.println(BIN_FULL);
+        //Serial.println("Bin is FULL!");
+        //BTserial.println(BIN_FULL);
+        conveyorOFF();
+        return false;
         }
-//        else{
-//        Serial.println("Sensor is detecting something...");
-//        BTserial.println("Sensor is detecting something...");
-//        }
+        delay(500);
      }
      else
      {
+        
         counter=0;
-        Serial.println("Bin is not yet full");
-        BTserial.println(BIN_READY);
+        //Serial.println("Bin is not yet full");
+        //BTserial.println(BIN_READY);
+        conveyorON();
+        return true;
+        delay(500);
      }
      delay(500);
   }
+  // }
+
+// void isBleConnected(int stat){
+//   Serial.print(stat);
+//   if (stat == 6)
+//   {
+//     isBLEcon = true;
+//   }
+// }
+
+void conveyorON()
+{
+  digitalWrite(IN1, HIGH); // turn on gearmotor
+  digitalWrite(IN4, HIGH); 
+}
+
+void conveyorOFF()
+{
+  digitalWrite(IN1, LOW); // turn off gearmotor
+  digitalWrite(IN4, LOW); 
+}
