@@ -58,18 +58,313 @@
             android:paddingBottom="100dp"
             app:layout_constraintVertical_bias="0.0">
 
-            <TextView
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:fontFamily="@font/poppins_bold"
-                android:paddingStart="50dp"
-                android:paddingTop="80dp"
-                android:paddingEnd="50dp"
-                android:paddingBottom="100dp"
+                android:layout_height="match_parent"
+                android:paddingTop="65dp"
+                android:paddingBottom="65dp">
 
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis cursus nibh, ac pretium sem. Donec iaculis eros nibh. Praesent nec neque vitae sem lacinia mollis. Nunc id augue maximus, tempus ante congue, accumsan ipsum. Nunc sapien metus, ultrices vitae pretium id, congue et velit. Phasellus dignissim finibus ex, sit amet vehicula nunc varius id. Duis id libero nec felis rhoncus tempus. Duis id lectus sit amet lectus mattis molestie. Donec sit amet sapien in est lacinia viverra. Suspendisse pretium dapibus lorem sed rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis a ligula nec lectus accumsan porttitor ut nec lectus. Morbi pharetra tortor risus, ut consectetur enim faucibus vitae."
-                android:textAlignment="center"
-                android:textSize="22dp" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/PrimaryTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="50dp"
+                        android:text="Primary requirements to operate the AGOOS (Robot):"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Pr1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20dp"
+                        android:text="1. The Bluetooth, Location Services, Mobile Data(even if no internet) and Mobile Hotspot of the smartphone should be turned on."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/PrimaryTitle" />
+
+                    <TextView
+                        android:id="@+id/Pr2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="2. Set the following credentials to the Mobile Hotspot of your smartphone:
+                        \n \t \t a. SSID/WiFi name: AGGOS
+                        \n \t \t b. Password: aggosadmin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Pr1" />
+
+                    <TextView
+                        android:id="@+id/Pr3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="3. AGGOS (Mobile Application) should be installed on the smartphone."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Pr2" />
+                    <TextView
+                        android:id="@+id/Pr4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="4. AGGOS (robot) should be turned on.
+\n \t \t a. The AGGOS Robot contains 3 switches that are label Switch 1, Switch 2 and Switch 3.
+\n \t \t b. In turning on the the AGGOS Robot, turn on the Switch 1 and Switch 2 first.
+\n \t \t c. You can only turn on Switch 3 when AGGOS Robot has successfully connected to the mobile hotspot of the user’s smartphone.
+"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Pr3" />
+                    <TextView
+                        android:id="@+id/Pr5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="5. In turning off the AGGOS robot, the switches should be turned off in descending order. This means switch 3 comes first, followed by switch 2, and lastly switch 1."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Pr4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/StepByStep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Primary">
+
+                    <TextView
+                        android:id="@+id/SBSTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="50dp"
+                        android:text="Step by step instructions:"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/SBS1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20dp"
+                        android:text="1. Turn on the Bluetooth, Location Services, Mobile Data(even if there is no internet connection), and Mobile Hotspot of the smartphone. Make sure to set the following credentials to the Mobile Hotspot of your smartphone.
+\n \t \t a. Make sure that the AGGOS Mobile Application is able to access the Location Services.
+\n \t \t b. Set the following credentials to the Mobile Hotspot of the smartphone
+\n \t \t \t \t i. SSID/WiFi name: AGGOS
+\n \t \t \t \t ii. Password: aggosadmin
+"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBSTitle" />
+
+                    <TextView
+                        android:id="@+id/SBS2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="2. Flip the Switch 1 and Switch 2 of the AGGOS Robot."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS1" />
+
+                    <TextView
+                        android:id="@+id/SBS3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="3. Go to the Settings of your smartphone, and click on Mobile Hotspot.
+\n \t \t a. Wait for at most 20 seconds after turning on the AGGOS robot.
+\n \t \t \t \t i. If there is no device connected to the Mobile Hotspot, turn off and on Switch 2 and wait for at least 20 seconds.
+\n \t \t \t \t ii. Repeat the process until the AGGOS Robot has successfully connected to the Mobile Hotspot of the user’s smartphone.
+"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS2" />
+                    <TextView
+                        android:id="@+id/SBS4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="4. Launch the AGGOS (Mobile Application).
+\n \t \t a. If the AGGOS (Mobile Application) is launched and the Bluetooth and Location Services are not yet turned on, the AGGOS(Mobile Application) will ask the user to turn on the aforementioned services."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS3" />
+                    <TextView
+                        android:id="@+id/SBS5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="5. Wait for the AGGOS (Mobile Application) to scan the AGGOS (Robot)."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS4" />
+                    <TextView
+                        android:id="@+id/SBS6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="6. After successfully scanning for the AGGOS (Robot), a blue button with “CONNECT” will appear. Click on it to connect the mobile application to the robot."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS5" />
+                    <TextView
+                        android:id="@+id/SBS7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="7. You can know if the AGGOS (Mobile Application) and AGGOS(robot) have successfully connected if the yellow button with “SCAN AGGOS BOT” has become the green button with “OPEN AGGOS CONTROLLER”.
+\n \t \t a. If the connection is successful, you will be automatically redirected to the control interface of the mobile application.
+\n \t \t b. If you are not automatically redirected to the control interface, click the green button to go to the control interface of the AGGOS (Mobile Application)."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS6" />
+                    <TextView
+                        android:id="@+id/SBS8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="8. In the control interface of the AGGOS (Mobile Application), you can see the directional pad/arrows, the status of the battery and the bin, and as well as the video feed of AGGOS(Robot)."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS7" />
+                    <TextView
+                        android:id="@+id/SBS9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="9. To navigate the AGGOS(Robot) to go to your desired location, click on the directional pad/arrows. The video feed will serve as a guide for the user in navigating the AGGOS (Robot). \n (Note: It can only move in one direction and there is no backward motion.)"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS8" />
+                    <TextView
+                        android:id="@+id/SBS10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="10. You can monitor the battery status of the robot through the control interface. A pop-up message will occur once the battery health is low and that you need to retrieve the AGGOS(Robot)."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS9" />
+                    <TextView
+                        android:id="@+id/SBS11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="11. Once the bin of the AGGOS (Robot) has reached its maximum capacity, an alert status will be displayed on the control interface."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS10" />
+                    <TextView
+                        android:id="@+id/SBS12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="12. If either the battery or bin is full, the user should navigate AGGOS back to their spot because it would not operate anymore."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS11" />
+                    <TextView
+                        android:id="@+id/SBS13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:layout_marginTop="20sp"
+                        android:text="13. To disconnect to AGGOS Robot, turn off the switches in the AGGOS Robot in descending order (Switch 3 to Switch 1). And turn off the Bluetooth, Location Services, Mobile Data, and Mobile Hotspot of your smartphone."
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/SBS12" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:fontFamily="@font/poppins_bold"-->
+<!--                android:paddingStart="50dp"-->
+<!--                android:paddingTop="80dp"-->
+<!--                android:paddingEnd="50dp"-->
+<!--                android:paddingBottom="100dp"-->
+<!--                android:text="Hi"-->
+<!--               android:textAlignment="center"-->
+<!--                android:textSize="22dp" />-->
 
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
